@@ -7,5 +7,23 @@
   <title>Plain js page</title>
 </head>
 <body>
+<form id="form">
+  <div class="input__wrapper">
+    <label for="username">
+      Username
+    </label>
+    <input id="username" type="text"/>
+    <div id="username-error" class="error"></div>
+  </div>
+  <div class="input__wrapper">
+    <label for="password">
+      Password
+    </label>
+    <input id="password" type="password"/>
+    <div id="password-error" class="error"></div>
+  </div>
+  <div id="form-error" class="error"></div>
+  <button type="submit">Submit</button>
+</form>
 </body>
 </html>
