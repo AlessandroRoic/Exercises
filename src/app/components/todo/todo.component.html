@@ -1,0 +1,14 @@
+<div>
+  <h2>{{ title }}</h2>
+  <input
+    type="text"
+    name="todoValue"
+    (keydown.enter)="addTodo()"
+    [(ngModel)]="todoValue"
+  />
+  <div>
+    <ng-container *ngFor="let item of list; let index = index">
+      <todo-item [label]="item" (onDelete)="deleteTodo(index)"></todo-item>
+    </ng-container>
+  </div>
+</div>
