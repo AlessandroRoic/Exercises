@@ -1,1 +1,30 @@
+.tab {
+  width: fit-content;
+}
 
+.tab__wrapper {
+  display: flex;
+  flex-direction: row;
+  background-color: grey;
+}
+
+.tab__header {
+  border: none;
+  background: none;
+  padding: 10px;
+  margin: 0;
+}
+
+.tab__header:hover {
+  color: white;
+}
+
+.active {
+  background-color: black;
+  color: white;
+}
+
+.tab__content {
+  background-color: gainsboro;
+  padding: 10px;
+}
