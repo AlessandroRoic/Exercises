@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <script defer src="index.js"></script>
-  <link rel="stylesheet" href="style.css"/>
-  <title>Plain js page</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Plain js page</title>
+  </head>
+  <body>
+    <div id="container">
+      <button data-modal="first-modal">Open Modal</button>
+    </div>
+    <div class="modal" id="first-modal">
+      <div class="modal__container">
+        <button class="modal__close">X</button>
+        <h1>Modal</h1>
+        <h2>Test</h2>
+      </div>
+    </div>
+  </body>
 </html>
