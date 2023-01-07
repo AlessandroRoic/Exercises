@@ -1,0 +1,8 @@
+.user__wrapper {
+  background-color: grey;
+  border: 4px;
+  display: grid;
+  grid-template-rows: auto auto;
+  padding: 10px;
+  width: fit-content;
+}

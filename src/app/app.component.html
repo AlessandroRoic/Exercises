@@ -1,0 +1,7 @@
+<div class="user__wrapper" *ngIf="userData">
+  <img [src]="userData.picture.medium"  alt="profile"/>
+  <div>
+    <p>{{ userData.name.first}}</p>
+    <p> {{ userData.name.last}}</p>
+  </div>
+</div>
