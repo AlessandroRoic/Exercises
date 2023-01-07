@@ -1,1 +1,24 @@
+table {
+  border: 1px solid black;
+}
 
+th {
+  background-color: burlywood;
+}
+
+td {
+  background-color: lightgrey;
+}
+
+td, th {
+  border: 1px solid black;
+}
+
+.sort-button {
+  background-color: transparent;
+  border: none;
+}
+
+.sort-button--flipped {
+  transform: rotate(180deg);
+}
