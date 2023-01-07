@@ -1,0 +1,4 @@
+<div class="accordion__wrapper">
+  <button class="accordion__header" (click)="onClick()">{{ title }}</button>
+  <div *ngIf="showContent" class="accordion__content">{{ content }}</div>
+</div>
