@@ -1,1 +1,9 @@
-
+.usercard-wrapper {
+  background-color: grey;
+  border-radius: 4px;
+  box-shadow: 5px 5px black;
+  padding: 10px;
+  display: grid;
+  grid-template-rows: auto auto;
+  width: fit-content;
+}
