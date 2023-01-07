@@ -1,1 +1,23 @@
+.accordion__wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 400px;
+}
 
+.accordion__header {
+  padding: 10px;
+  border: 1px solid black;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+
+.accordion__body {
+  padding: 10px;
+}
+
+.hidden {
+  padding: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
