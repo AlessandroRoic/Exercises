@@ -1,0 +1,17 @@
+.accordion__wrapper {
+  margin: 0 10px 0 10px;
+  width: 400px;
+}
+
+.accordion__header {
+  border: 1px solid black;
+  width: 100%;
+  text-align: left;
+  background-color: transparent;
+  padding: 5px;
+}
+
+.accordion__content {
+  padding: 5px;
+  background-color: beige;
+}
