@@ -1,1 +1,3 @@
-
+.todo__item--checked {
+  text-decoration: line-through;
+}
