@@ -1,0 +1,17 @@
+.table__header {
+  border: 1px solid black;
+  background-color: lightslategrey;
+}
+
+.table__data {
+  border: 1px solid black;
+}
+
+.table__header-button {
+  background: none;
+  border: none;
+}
+
+.table__header-button--down {
+  transform: rotate(180deg);
+}
