@@ -1,1 +1,37 @@
+:root {
+  --border-color: 2px solid black;
+}
 
+.game__wrapper {
+  height: 300px;
+  width: 300px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cell {
+  background: none;
+  border: 0;
+  font-size: xx-large;
+  padding: 0;
+}
+
+.cell__topMiddle {
+  border-left: var(--border-color);
+  border-right: var(--border-color);
+}
+.cell__middleLeft {
+  border-top: var(--border-color);
+  border-bottom: var(--border-color);
+}
+.cell__center {
+  border: var(--border-color);
+}
+.cell__middleRight {
+  border-top: var(--border-color);
+  border-bottom: var(--border-color);
+}
+.cell__bottomMiddle {
+  border-left: var(--border-color);
+  border-right: var(--border-color);
+}
