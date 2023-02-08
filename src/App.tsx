@@ -1,11 +1,10 @@
 import * as React from 'react';
-import './styles.css';
+import './styles.scss';
+import NewsFeed from "./pages/NewsFeed/NewsFeed";
 
 export default function App() {
 
   return (
-    <div>
-
-    </div>
+    <NewsFeed />
   );
 }
