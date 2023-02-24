@@ -1,8 +1,7 @@
-import * as React from "react";
-import { TodoList } from "./TodoList";
 import { FormEvent, useState } from "react";
+import TodoList from "./TodoList";
 
-export const Todo = ({ headerLabel }: { headerLabel: string }) => {
+const Todo = ({ headerLabel }: { headerLabel: string }) => {
   const [todoList, setTodoList] = useState<string[]>([]);
   const [todoItem, setTodoItem] = useState<string>("");
 
@@ -12,16 +11,22 @@ export const Todo = ({ headerLabel }: { headerLabel: string }) => {
     setTodoItem("");
   };
 
+  const deleteItem = (itemIndex: number) => {
+    setTodoList((list) => list.filter((item, index) => index !== itemIndex));
+  };
+
   return (
     <div>
       <h2>{headerLabel}</h2>
       <form onSubmit={addItem}>
         <input
           type="text"
-          onChange={(e) => setTodoItem(e.target.value)}
-        ></input>
+          value={todoItem}
+          onChange={(e) => setTodoItem(e.target.value)}></input>
       </form>
-      <TodoList list={todoList} />
+      <TodoList list={todoList} deleteItem={deleteItem} />
     </div>
   );
 };
+
+export default Todo;

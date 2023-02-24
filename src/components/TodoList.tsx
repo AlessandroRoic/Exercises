@@ -1,12 +1,23 @@
-import * as React from 'react';
-import { TodoItem } from './TodoItem';
+import TodoItem from "./TodoItem";
 
-export const TodoList = ({ list }: {list: string[]}) => {
+const TodoList = ({
+  list,
+  deleteItem,
+}: {
+  list: string[];
+  deleteItem: (index: number) => void;
+}) => {
   return (
     <div className="todo__list">
       {list.map((label, index) => (
-        <TodoItem label={label} keyValue={index} />
+        <TodoItem
+          label={label}
+          key={index}
+          deleteItem={() => deleteItem(index)}
+        />
       ))}
     </div>
   );
 };
+
+export default TodoList;
