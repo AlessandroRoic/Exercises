@@ -11,3 +11,5 @@ function handleGetRequests(url, request, response) {
   }
   response.end();
 }
+
+module.exports = handleGetRequests;

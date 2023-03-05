@@ -1,11 +1,11 @@
-const https = require("https");
+const http = require("http");
 const PORT = process.env.PORT || 4001;
 const { URL } = require("url");
-const { handleGetRequests } = require("./controllers/todoController");
+const handleGetRequests = require("./controllers/todoController");
 
-const server = https.createServer((request, response) => {
+const server = http.createServer((request, response) => {
   const { method } = request;
-  const url = new URL(request.url);
+  const url = new URL(`http://${request.headers.host}${request.url}`);
   switch (method) {
     case "GET":
       handleGetRequests(url, request, response);
@@ -18,5 +18,5 @@ const server = https.createServer((request, response) => {
 });
 
 server.listen(PORT, (error) => {
-  error ? console.log(error) : console.log(`Server has started on port: ${PORT}`);
+  error ? console.log(error) : console.log(`Server has started on: ${server.address().port}`);
 });
