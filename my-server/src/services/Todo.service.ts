@@ -1,5 +1,5 @@
-import { Todos } from "../models/Todos.interface";
-import { Todo } from "../models/Todo.interface";
+import { Todos } from "../models/todos.interface";
+import { BaseTodo, Todo } from "../models/todo.interface";
 
 let todos: Todos = {
   1: {
@@ -18,7 +18,7 @@ export const findAll = async (): Promise<Todo[]> => Object.values(todos);
 
 export const find = async (id: number): Promise<Todo> => todos[id];
 
-export const create = async (newTodo: Todo): Promise<Todo> => {
+export const create = async (newTodo: BaseTodo): Promise<Todo> => {
   const id = new Date().valueOf();
   todos[id] = {
     id,
@@ -27,15 +27,18 @@ export const create = async (newTodo: Todo): Promise<Todo> => {
   return todos[id];
 };
 
-export const update = async (id:number, updatedTodo: Todo): Promise<Todo | null> => {
+export const update = async (
+  id: number,
+  updatedTodo: Todo
+): Promise<Todo | undefined> => {
   const todo = await find(id);
   if (!todo) return;
-  todos[id] = {id, ...updatedTodo}
-  return todos[id]
-}
+  todos[id] = { ...updatedTodo, id };
+  return todos[id];
+};
 
-export const remove = async (id:number): Promise<null | void> => {
+export const remove = async (id: number): Promise<null | void> => {
   const todo = await find(id);
   if (!todo) return;
-  delete todos[id]
-}
+  delete todos[id];
+};
