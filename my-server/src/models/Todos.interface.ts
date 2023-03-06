@@ -1,4 +1,4 @@
-import { Todo } from "./todo.interface";
+import { Todo } from "./Todo.interface";
 
 export interface Todos {
   [key: number]: Todo

@@ -1,5 +1,5 @@
-import { Todos } from "../models/todos.interface";
-import { BaseTodo, Todo } from "../models/todo.interface";
+import { Todos } from "../models/Todos.interface";
+import { BaseTodo, Todo } from "../models/Todo.interface";
 
 let todos: Todos = {
   1: {
@@ -18,7 +18,8 @@ export const findAll = async (): Promise<Todo[]> => Object.values(todos);
 
 export const find = async (id: number): Promise<Todo> => todos[id];
 
-export const create = async (newTodo: BaseTodo): Promise<Todo> => {
+export const create = async (newTodo: BaseTodo): Promise<Todo | undefined> => {
+  if (!newTodo) return;
   const id = new Date().valueOf();
   todos[id] = {
     id,

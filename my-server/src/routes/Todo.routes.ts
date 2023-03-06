@@ -1,14 +1,9 @@
 import "express-async-errors";
 import express, { Request, Response } from "express";
-import { BaseTodo, Todo } from "../models/todo.interface";
-import {
-  create,
-  find,
-  findAll,
-  remove,
-  update,
-} from "../services/todo.service";
+import { BaseTodo, Todo } from "../models/Todo.interface";
+import { create, find, findAll, remove, update } from "../services/Todo.service";
 
+export const TODO_ROUTE = '/todos';
 export const todoRouter = express.Router();
 
 // GET todos
@@ -32,7 +27,7 @@ todoRouter.get("/:id", async (req: Request, res: Response) => {
 // POST todos
 todoRouter.post("/", async (req: Request, res: Response) => {
   const todo: BaseTodo = req.body;
-
+  console.log(todo)
   const newItem = await create(todo);
 
   res.status(201).json(newItem);
