@@ -9,7 +9,7 @@ import {
   update,
 } from "../services/todo.service";
 
-const todoRouter = express.Router();
+export const todoRouter = express.Router();
 
 // GET todos
 todoRouter.get("/", async (req: Request, res: Response) => {
@@ -44,11 +44,11 @@ todoRouter.put("/:id", async (req: Request, res: Response) => {
 
   const todoUpdate: Todo = req.body;
 
-  const existingItem: Todo = await find(id);
+  const existingTodo: Todo = await find(id);
 
-  if (existingItem) {
-    const updatedItem = await update(id, todoUpdate);
-    return res.status(200).json(updatedItem);
+  if (existingTodo) {
+    const updatedTodo = await update(id, todoUpdate);
+    return res.status(200).json(updatedTodo);
   }
 
   const newItem = await create(todoUpdate);
