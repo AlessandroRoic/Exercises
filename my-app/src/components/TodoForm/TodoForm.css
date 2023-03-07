@@ -1,0 +1,20 @@
+.todo-form__wrapper {
+    background-color: darkgray;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid black;
+    width: fit-content;
+    height: fit-content;
+}
+
+.todo-form__todo-input {
+    border-radius: 4px;
+}
+
+.todo-form__add-button {
+    background-color: greenyellow;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-left: 10px;
+    font-weight: bold;
+}
