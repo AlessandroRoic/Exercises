@@ -34,8 +34,17 @@ export const update = async (
 ): Promise<Todo | undefined> => {
   const todo = await find(id);
   if (!todo) return;
-  todos[id] = { ...updatedTodo, id };
+  todos[id] = { ...updatedTodo };
   return todos[id];
+};
+
+export const patch = async (
+  id: number,
+  updatedFields: Partial<BaseTodo>
+): Promise<Todo | undefined> => {
+  const todo = await find(id);
+  if (!todo) return;
+  todos[id] = { ...todos[id], ...updatedFields };
 };
 
 export const remove = async (id: number): Promise<null | void> => {
